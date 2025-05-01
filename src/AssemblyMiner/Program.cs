@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using CommandLine;
 
-await Parser.Default.ParseArguments<Options.Version>(args).WithParsedAsync(async (parameters) =>
+Parser.Default.ParseArguments<Options.Version>(args).WithParsed((parameters) =>
 {
 
     var config = new ConfigurationBuilder()
@@ -22,13 +22,12 @@ await Parser.Default.ParseArguments<Options.Version>(args).WithParsedAsync(async
 
     try
     {
-        using var cancellationTokenSource = serviceProvider.GetCancellationTokenSource();
         var main = serviceProvider.GetRequiredService<Main>();
 
         switch (parameters)
         {
             case Options.Version options:
-                await main.RunAsync(options.Path, cancellationTokenSource.Token);
+                main.GetVersion(options.Path);
                 break;
         };
     }

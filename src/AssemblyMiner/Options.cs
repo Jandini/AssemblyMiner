@@ -2,7 +2,7 @@
 
 internal sealed class Options
 {
-    [Verb("version", isDefault: true, HelpText = "Get assembly informational version.")]
+    [Verb("version", isDefault: true, HelpText = "Get assembly informational version and set environment variable.")]
     internal class Version
     {
         [Option('p', "path", Required = true, HelpText = "Path to the assembly file.")]
