@@ -27,7 +27,7 @@ Parser.Default.ParseArguments<Options.Version>(args).WithParsed((parameters) =>
         switch (parameters)
         {
             case Options.Version options:
-                main.GetVersion(options.Path);
+                main.GetVersion(options.Path, options.EnvironmentVariableName);
                 break;
         };
     }
