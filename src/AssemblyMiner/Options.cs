@@ -9,7 +9,7 @@ internal sealed class Options
         public string Path { get; set; }
 
 
-        [Option('e', "env-var-name", HelpText = "Environment variable name to store the version.")]
+        [Option('e', "env", HelpText = "Environment variable name to store the version.")]
         public string EnvironmentVariableName { get; set; }
 
     }
