@@ -2,7 +2,7 @@
   "profiles": {
     "Run": {
       "commandName": "Project",
-      "commandLineArgs": "run"
+      "commandLineArgs": "run -p C:\\Projects\\TestGit\\src\\TestGit\\bin\\Release\\net8.0\\TestGit.dll"
     },
     "Help": {
       "commandName": "Project",

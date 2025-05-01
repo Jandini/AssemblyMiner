@@ -4,8 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using CommandLine;
 
-await Parser.Default.ParseArguments<Options.Run>(args).WithParsedAsync(async (parameters) =>
+await Parser.Default.ParseArguments<Options.Version>(args).WithParsedAsync(async (parameters) =>
 {
+
     var config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddApplicationSettings()
@@ -26,8 +27,8 @@ await Parser.Default.ParseArguments<Options.Run>(args).WithParsedAsync(async (pa
 
         switch (parameters)
         {
-            case Options.Run options:
-                await main.RunAsync(cancellationTokenSource.Token);
+            case Options.Version options:
+                await main.RunAsync(options.Path, cancellationTokenSource.Token);
                 break;
         };
     }

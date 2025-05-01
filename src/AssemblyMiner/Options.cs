@@ -2,8 +2,10 @@
 
 internal sealed class Options
 {
-    [Verb("run", isDefault: true, HelpText = "Run program.")]
-    internal class Run
+    [Verb("version", isDefault: true, HelpText = "Get assembly informational version.")]
+    internal class Version
     {
+        [Option('p', "path", Required = true, HelpText = "Path to the assembly file.")]
+        public string Path { get; set; }
     }
 }

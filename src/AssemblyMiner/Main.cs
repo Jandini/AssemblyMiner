@@ -2,7 +2,7 @@
 
 internal class Main(ILogger<Main> logger) 
 {
-    public async Task RunAsync(CancellationToken cancellationToken = default)
+    public async Task RunAsync(string path, CancellationToken cancellationToken = default)
     {
         logger.LogInformation("Hello World!");
         await Task.CompletedTask;
