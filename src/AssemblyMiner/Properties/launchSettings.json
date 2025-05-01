@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Run": {
+      "commandName": "Project",
+      "commandLineArgs": "run -e SemVer -p C:\\Projects\\TestGit\\src\\TestGit\\bin\\Release\\net8.0\\CommandLine.dll > c:\\temp\\ver.txt"
+    },
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    }
+  }
+}
