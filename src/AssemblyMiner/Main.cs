@@ -8,14 +8,12 @@ internal class Main(ILogger<Main> logger, IVersionMiner versionMiner)
     {
         var version = versionMiner.GetInformationalVersion(path);
 
+        Console.WriteLine(version);
+
         if (!string.IsNullOrEmpty(variableName))
         {
             logger.LogInformation($"Setting environment variable {variableName} to {version}");
             Environment.SetEnvironmentVariable(variableName, version);
-        }
-        else
-        {
-            logger.LogWarning($"Output environment variable was not provided.");
         }
     }
 }
